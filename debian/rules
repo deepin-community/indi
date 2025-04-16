@@ -1,4 +1,17 @@
 #!/usr/bin/make -f
 
+libpkgs_gen_strict_local_shlibs = $(libpkgs_all_packages)
+include /usr/share/pkg-kde-tools/qt-kde-team/2/library-packages.mk
+
+include /usr/share/dpkg/architecture.mk
+
+archs_that_need_atomic = riscv64
+ifeq ($(DEB_HOST_ARCH),$(findstring $(DEB_HOST_ARCH), $(archs_that_need_atomic)))
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--no-as-needed -latomic -Wl,--as-needed
+endif
+
 %:
-	dh $@
+	dh $@ --with sodeps
+
+override_dh_gencontrol-arch: libpkgs_gen_strict_local_shlibs
+	dh_gencontrol -a

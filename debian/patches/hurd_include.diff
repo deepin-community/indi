@@ -1,0 +1,19 @@
+Author: Pino Toscano <pino@debian.org>
+Description: Include <sys/ioctl.h> on GNU/Hurd
+ It is needed to use ioctl().
+Forwarded: no
+Last-Updated: 2019-11-11
+
+--- a/libs/indicore/indicom.c
++++ b/libs/indicore/indicom.c
+@@ -71,6 +71,10 @@
+ #include <sys/ioctl.h>
+ #endif
+ 
++#ifdef __GNU__
++#include <sys/ioctl.h>
++#endif
++
+ #ifdef _WIN32
+ #undef CX
+ #undef CY

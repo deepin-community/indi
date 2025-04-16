@@ -1,5 +1,492 @@
-template-repository (1.0-1) unstable; urgency=medium
+indi (1.9.9+dfsg-3) unstable; urgency=medium
 
-  * Initial release
+  * Backport upstream commit 4170c0ae30ac1df2e732392e38cb6aaae1802379 to fix
+    the build with GCC 13; patch
+    upstream_rawhideFix-add-missing-header-complained-about-with-.patch.
+    (Closes: #1037696)
+  * Update standards version to 4.6.2, no changes needed.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Pino Toscano <pino@debian.org>  Sat, 15 Jul 2023 06:55:55 +0200
+
+indi (1.9.9+dfsg-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Make sure to link with atomic on architectures that need it, i.e. riscv64.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 17 Dec 2022 09:23:13 +0100
+
+indi (1.9.9+dfsg-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update the build dependencies according to the upstream build system:
+    - bump cmake to 3.13
+    - add libev-dev
+  * Update the patches:
+    - hurd_include.diff: refresh/update
+  * Add the new binary package libindiclient1 for the libindiclient shared
+    library.
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 03 Dec 2022 17:47:34 +0100
+
+indi (1.9.6+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 24 May 2022 07:44:35 +0200
+
+indi (1.9.5.1+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.6.1, no changes required.
+  * Remove inactive Uploaders.
+  * CI: disable the reprotest build path variations for now.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 21 May 2022 06:33:11 +0200
+
+indi (1.9.4+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Set upstream metadata fields: Archive.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 17 Jan 2022 22:42:17 +0100
+
+indi (1.9.3+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 14 Nov 2021 10:01:11 +0100
+
+indi (1.9.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.6.0, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Wed, 22 Sep 2021 08:06:08 +0200
+
+indi (1.8.8+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update the patches:
+    - path_max.diff: drop, no more needed now
+    - macos_detection.diff: drop, fixed upstream
+  * Stop passing --fail-missing to dh_missing, as it is the default in
+    debhelper compatibility 13+.
+  * Remove the explicit as-needed linking, as it is done by binutils now.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 12 Jan 2021 10:33:14 +0100
+
+indi (1.8.7+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.5.1, no changes required.
+  * Update the patches:
+    - hurd_include.diff: refresh
+  * Fix the macOS detection; patch macos_detection.diff.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 23 Nov 2020 11:12:15 +0100
+
+indi (1.8.6+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update the patches:
+    - path_max.diff: refresh
+    - hurd_include.diff: refresh
+  * Bump the debhelper compatibility to 13:
+    - switch the debhelper-compat build dependency to 13
+
+ -- Pino Toscano <pino@debian.org>  Sun, 08 Nov 2020 10:34:13 +0100
+
+indi (1.8.5+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add Rules-Requires-Root: no.
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 20 Jul 2020 06:45:07 +0200
+
+indi (1.8.4+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update the patches:
+    - path_max.diff: update to the new version
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 07 Feb 2020 17:13:54 +0100
+
+indi (1.8.3+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Enable all the variations for reprotest in the salsa CI.
+  * Use https for Homepage.
+  * Tighten inter-library dependencies.
+  * Bump Standards-Version to 4.5.0, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 26 Jan 2020 07:27:43 +0100
+
+indi (1.8.2+dfsg-2) unstable; urgency=medium
+
+  * Release to unstable.
+  * Include <sys/ioctl.h> on GNU/Hurd; patch hurd_include.diff.
+  * Small copyright update.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 11 Nov 2019 08:05:45 +0100
+
+indi (1.8.2+dfsg-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update the patches:
+    - path_max.diff: refresh
+  * Add the libfftw3-dev build dependency, needed by the new version.
+  * Bump Standards-Version to 4.4.1, no changes required.
+  * Drop the migration from indi-dbg, no more needed after two Debian stable
+    releases.
+  * Upstream changed the layout of the sources, so there is no more need to
+    specify "libindi" as the source directory.
+  * Add the new binary package libindilx200-1 for the libindilx200 shared
+    library.
+  * Use the sodep dh addon to generate the list of shared libraries to depend
+    on, and use the ${so:Depends} substvar in libindi-dev.
+  * Rename the source as "indi", aligning again with the upstream naming.
+  * Add the configuration for the CI on salsa.
+  * Update copyright.
+  * Bump the debhelper compatibility to 12:
+    - switch the debhelper build dependency to debhelper-compat 12
+    - remove debian/compat
+    - stop passing -V to dh_makeshlibs, as now done by default
+
+ -- Pino Toscano <pino@debian.org>  Sat, 09 Nov 2019 11:30:41 +0100
+
+libindi (1.7.5+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.2.1, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 24 Nov 2018 11:05:16 +0100
+
+libindi (1.7.4+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.2.0, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 21 Aug 2018 07:07:49 +0200
+
+libindi (1.7.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Since we alre already repacking, exclude the upstream 'debian'
+    subdirectory.
+  * Run dh_missing with --fail-missing, to not miss any installed file.
+  * Bump Standards-Version to 4.1.4, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 28 Apr 2018 07:24:49 +0200
+
+libindi (1.6.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update the patches:
+    - upstream_cmake-rewrite-libusb-1.0-search.patch: drop, backported
+      from upstream
+    - upstream_Fix-libusb.h-include.patch: drop, backported from
+      upstream
+    - use_termios.diff: drop, fixed upstream
+    - path_max.diff: refresh, and add new needed hunk to it
+  * Give up on symbols files: upstream does not seem to keep any compatibility
+    anyway, plus the libraries are built without hidden visibility (exposing
+    all the symbols), so the work needed basically gives no gain.  Just rely
+    on the current shlib version as dependency for users of the libraries.
+  * Add the libogg-dev, and libtheora-dev build dependencies.
+  * Link in as-needed mode.
+  * Bump Standards-Version to 4.1.3, no changes required.
+  * Bump the debhelper compatibility to 11:
+    - bump the debhelper build dependency to 11~
+    - bump compat to 11
+    - remove --parallel for dh, as now done by default
+  * Switch Vcs-* fields to salsa.debian.org.
+
+ -- Pino Toscano <pino@debian.org>  Thu, 08 Mar 2018 17:14:22 +0100
+
+libindi (1.4.1+dfsg-3) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 02 Dec 2017 07:56:41 +0100
+
+libindi (1.4.1+dfsg-2) experimental; urgency=medium
+
+  * Backport upstream commit b6fc36c4e3df7321ba2fa41d4c1a9d91fc32eef3 to fix
+    the cmake search for libusb-1.0 (most for non-Linux architectures); patch
+    upstream_cmake-rewrite-libusb-1.0-search.patch.
+  * Backport upstream commit 921b6a1a5536642967ea4c3d481a48fd8a2ed296 to fix
+    one libusb.h include; patch upstream_Fix-libusb.h-include.patch.
+  * Include termios.h instead of termio.h for portability; patch
+    use_termios.diff.
+  * Workaround PATH_MAX usages; patch path_max.diff.
+  * Update symbols files.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 25 Nov 2017 09:24:07 +0100
+
+libindi (1.4.1+dfsg-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update the patches:
+    - freebsd_support: drop, applied/fixed upstream
+  * Drop the libindi1 binary, as that shared library is not provided anymore.
+  * Stop exporting CFLAGS, CXXFLAGS, and LDFLAGS in rules, as debhelper already
+    exports them.
+  * The actual indi sources are under a libindi subdirectory, so pass -Dlibindi
+    to dh.
+  * Do not define LIB_SUFFIX for cmake anymore, as the build system already
+    respects the system default library directory.
+  * Update symbols files.
+  * Update copyright.
+  * Exclude '3rdparty', and 'macosx' subdirectory from the upstream tarball:
+    - mention these changes in copyright
+    - use a +dfsg suffix for the version
+
+ -- Pino Toscano <pino@debian.org>  Fri, 24 Nov 2017 07:13:36 +0100
+
+libindi (1.2.0-6) unstable; urgency=medium
+
+  * Update symbols files.
+  * Update watch file to point to GitHub.
+  * Bump Standards-Version to 4.1.1, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Thu, 23 Nov 2017 07:33:21 +0100
+
+libindi (1.2.0-5) unstable; urgency=medium
+
+  * Update symbols files.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 26 Aug 2017 06:56:35 +0200
+
+libindi (1.2.0-4) unstable; urgency=medium
+
+  * Update symbols files. (Closes: #853494)
+  * Use https in the specification URL of copyright.
+  * Update Vcs-* fields.
+  * Bump Standards-Version to 4.0.1, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Thu, 24 Aug 2017 07:22:49 +0200
+
+libindi (1.2.0-3) unstable; urgency=medium
+
+  * Force build against libnova-dev 0.16
+  * Drop libgsl0-dev build dep
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 27 Oct 2016 10:41:34 +0200
+
+libindi (1.2.0-2) unstable; urgency=medium
+
+  * Fix libcfitsio-dev -dev dependency.
+    Thanks to Aurelien Jarno for the report/reminder (Closes: 841219)
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 18 Oct 2016 17:26:10 +0200
+
+libindi (1.2.0-2~) unstable; urgency=medium
+
+  * Update symbols files to make it compatible with gcc-6.
+    (Closes: 811961) Thanks to Martin Michlmayr for the report.
+  * Update patch: freebsd_support (Closes: 830732)
+  * Update symbols files to make then compatible with kfreebsd
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 14 Jul 2016 15:23:08 +0200
+
+libindi (1.2.0-1) unstable; urgency=medium
+
+  * Fix kfreebsd-i386 symbols. (Closes: #816443) Thanks to Steven Chamberlain
+    for the report.
+  * New upstream release (1.2.0).
+  * Update symbols files
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+  * Migrate dbg package to automatic dbgsym
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 26 Apr 2016 15:14:11 +0200
+
+libindi (1.1.0-2) unstable; urgency=medium
+
+  * Update patch freebsd_support, use system includes for the libusb.h
+    header. (Closes: 816333) Thanks to Steven Chamberlain for the patch.
+  * Update symbols from 1.1.0-1 buildlogs.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Mar 2016 11:48:22 +0100
+
+libindi (1.1.0-1) unstable; urgency=medium
+
+  * New upstream release (1.1.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 18 Jan 2016 16:06:38 +0100
+
+libindi (1.0.0-4) unstable; urgency=medium
+
+  [ Bas Couwenberg ]
+  * Update build dependencies for GSL 2, change libgsl0-dev to libgsl-dev.
+    (Closes: #806834)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 02 Dec 2015 11:09:08 +0100
+
+libindi (1.0.0-3) unstable; urgency=medium
+
+  * Update symbols from 1.0.0-2 buildlogs
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 11 Aug 2015 16:16:40 +0200
+
+libindi (1.0.0-2) unstable; urgency=medium
+
+  * Update symbols from 1.0.0-1 buildlogs
+  * Update symbols files. (Closes: #795143)
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 11 Aug 2015 08:24:15 +0200
+
+libindi (1.0.0-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (0.9.9).
+  * New upstream release (1.0.0).
+  * Follow upstream soversion bump. (Closes: #791746)
+  * Update copyright information.
+  * Update symbols with kfreebsd builds.
+  * Update patch for freebsd_support for usb support.
+  * Remove patch: no-sys-io.patch
+  * Remove patch: abi.diff
+  * Update symbols files.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+
+  [ Adrien Grellier ]
+  * depends on libcfitsio-dev instead of libcfitsio3-dev
+    (Closes: #761723)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 08 Aug 2015 12:25:22 +0200
+
+libindi (0.9.8.1-5.1) unstable; urgency=medium
+
+  * Change B-D to libjpeg-dev to finish the transition to libjpeg-turbo
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 29 Sep 2014 15:42:14 +0200
+
+libindi (0.9.8.1-5) unstable; urgency=medium
+
+  * Update symbols with the buildds logs and kfreebsd porter box log.
+  * New patch: freebsd_support
+  * Update build dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 30 Aug 2014 04:48:12 +0200
+
+libindi (0.9.8.1-4) unstable; urgency=medium
+
+  * Remove libusb-dev build dependency. (Closes: #754746)
+  * Update symbols with the buildds logs. (Closes: #754747)
+  * New patch: no-sys-io.patch. (Closes: #668134)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 18 Jul 2014 11:01:29 +0200
+
+libindi (0.9.8.1-3) unstable; urgency=medium
+
+  * Improve dependencies, libindialignmentdriver0 is the only library that
+    does a dlopen of the plugins. (Closes: #747855)
+  * Update symbols files. (Closes: #749962)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 12 Jul 2014 14:30:00 +0200
+
+libindi (0.9.8.1-2) unstable; urgency=medium
+
+  * Update symbols from 0.9.8.1-1 buildlogs.
+  * Add dh sequence pkgkde_symbolshelper.
+  * Release to unstable.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 07 May 2014 14:16:04 +0200
+
+libindi (0.9.8.1-1) experimental; urgency=medium
+
+  * Update watch file.
+  * New upstream release.
+  * Remove patch: libdir.diff, applied by upstream.
+  * Remove patch: setINDIproperty_mayhem_fix.diff, applied by upstream.
+  * Remove patch: getINDIproperty_mayhem_fix.diff, applied by upstream.
+  * Refresh patches.
+  * Update build dependencies.
+  * Bump libindidriver soversion.
+  * Update symbols.
+  * New lib package libindialignmentdriver0.
+  * Install binary plugins in an arch-dependant dir.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Apr 2014 17:57:49 +0200
+
+libindi (0.9.7-1) unstable; urgency=low
+
+  * New upstream release.
+  * New patch: setINDIproperty_mayhem_fix.diff fix for
+    http://www.forallsecure.com/bug-
+    reports/f7467b92bdec47c7d8213b93db76f57e58e97215/
+  * New patch: getINDIproperty_mayhem_fix.diff fix for
+    http://www.forallsecure.com/bug-
+    reports/3ef71f68767fec365de8eb61f91a4ca0be01b5fc/
+  * Refresh patches.
+  * Add libindimain0 and libindidriver0 packages.
+  * Add symbols files.
+  * Add myself to the Uploaders field.
+  * Bump debhelper b-d to 9.
+  * Bump Standards-Version, no changes needed.
+  * Update install files.
+  * Bump compat to 9.
+  * Make -dbg package m-a: same.
+  * Add new packages to -dev package.
+  * Update symbols files.
+  * Bump so name of libindidriver to 0b.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 20 Nov 2013 13:56:05 +0100
+
+libindi (0.9.1-2) unstable; urgency=low
+
+  * Release to unstable.
+  * Bump the libnova-dev build dependency to >= 0.14.0. (Not really needed,
+    but makes sure it is built with an up-to-date libnova.)
+
+ -- Pino Toscano <pino@debian.org>  Sun, 25 Mar 2012 15:08:06 +0200
+
+libindi (0.9.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * It seems ABI is broken (new virtual method), so:
+    - bump the SONAME to 0b (update patch abi.diff)
+    - rename libindi0a to libindi0b
+  * Bump Standards-Version to 3.9.3, no changes required.
+  * Switch copyright to copyright-format 1.0.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 23 Mar 2012 13:20:47 +0100
+
+libindi (0.9-1) unstable; urgency=low
+
+  * New upstream release:
+    - provides the fix by Nobuhiro Iwamatsu (thanks!) for compiling on SuperH.
+      (Closes: #644456)
+  * Update the patches:
+    - destdir.diff: drop, applied upstream
+    - fix-pkgconfig.diff: drop, applied upstream
+    - format-security.diff: drop, applied upstream
+    - libdir.diff: refresh, dropping the applied parts
+  * boost is no more a dependency, so remove libboost-dev from the the build
+    dependencies and from the libindi-dev dependencies.
+  * libindi-dev: add dependency on libcfitsio3-dev, as cfitsio headers are
+    included in public headers.
+  * Update copyright.
+  * Upstream does not keep a stable ABI while not bumping the SONAME, so:
+    - bump the SONAME to 0a (patch abi.diff)
+    - rename libindi0 to libindi0a
+    - drop the symbols file of libindi, "replaced" by a tight shlibs
+
+ -- Pino Toscano <pino@debian.org>  Mon, 16 Jan 2012 17:16:38 +0100
+
+libindi (0.8-1) unstable; urgency=low
+
+  * Initial release.
+  * Add patches:
+    - format-security.diff: fix string literals for snprintf() invocations
+    - libdir.diff: respect the LIB_DESTINATION cmake variable
+    - destdir.diff: respect the DESTDIR envvar
+    - fix-pkgconfig.diff: fix some issues in the .pc pkg-config file
+
+ -- Pino Toscano <pino@debian.org>  Sat, 01 Oct 2011 19:40:46 +0200

@@ -1,9 +1,240 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: template-repository
-Source: https://github.com/deepin-community/template-repository
+Upstream-Name: indi
+Source: http://sourceforge.net/projects/indi/
+Files-Excluded:
+ 3rdparty
+ debian
+ macosx
+Comment:
+ - the '3rdparty' subdirectory is removed, as it contains 3rd party material
+   (with copies of other libraries) that we do not want
+ - the 'debian' subdirectory is removed, as we use our debian packaging
+ - the 'macosx' subdirectory is removed, as it contains only material for macOS
 
 Files: *
-Copyright: 2023 Tsic404 <liuheng@deepin.org>
+Copyright: 2005, Douglas Philipson <dougp@intermind.net>
+           2003-2006, Elwood C. Downey
+           2005-2007, Elwood C. Downey <ecdowney@clearskyinstitute.com>
+           2013, Felix Krämer <rigelsys@felix-kraemer.de>
+           2009, Ferran Casarramona <ferran.casarramona@gmail.com>
+           2004, Francois Meyer <dulle@free.fr>
+           1991-1999, Free Software Foundation, Inc
+           2005, Gaetano Vocca <yagvoc-web@yahoo.it>
+           2013-2014, geehalel <geehalel@gmail.com>
+           2003-2014, Jasem Mutlaq
+           2003-2014, Jasem Mutlaq <mutlaqja@ikarustech.com>
+           2003, Jason Harris <jharris@30doradus.org>
+           2003, John Kielkopf
+           2007, Markus Wildi
+           2006, Markus Wildi <markus.wildi@datacomm.ch>
+           2011, Nacho Mas (mas.ignacio@gmail.com). Only litle changes
+           2011, Onno Hommes <ohommes@alumni.cmu.edu>
+           1996-1998, Patrick Reynolds
+           2008, Angel Carpintero <ack@telenfonica.net>
+           2013, CloudMakers, s. r. o
+           2011, Gerry Rozema
+           2000, Joseph O'Rourke.
+           1999, Rainer Johanni <Rainer@Johanni.de>
+           2010, henrik andersson
+           2001, pHilipp Zabel <pzabel@gmx.de>
+           2005, Bruce Bockius <bruceb@WhiteAntelopeSoftware.com>
+License: LGPL-2.1+
+
+Files: drivers/agent/agent_imager.cpp
+       drivers/agent/agent_imager.h
+       drivers/agent/agent_imager.txt
+       drivers/ccd/ccd_simulator.cpp
+       drivers/ccd/ccd_simulator.h
+       drivers/dome/baader_dome.cpp
+       drivers/dome/baader_dome.h
+       drivers/dome/dome_simulator.cpp
+       drivers/dome/dome_simulator.h
+       drivers/filter_wheel/filter_simulator.cpp
+       drivers/filter_wheel/filter_simulator.h
+       drivers/focuser/focus_simulator.cpp
+       drivers/focuser/focus_simulator.h
+       drivers/telescope/synscanmount.cpp
+       libs/indibase/baseclient.cpp
+       libs/indibase/baseclient.h
+       libs/indibase/basedevice.cpp
+       libs/indibase/basedevice.h
+       libs/indibase/defaultdevice.cpp
+       libs/indibase/defaultdevice.h
+       libs/indibase/indiccd.cpp
+       libs/indibase/indiccd.h
+       libs/indibase/indicontroller.cpp
+       libs/indibase/indicontroller.h
+       libs/indibase/indidome.cpp
+       libs/indibase/indidome.h
+       libs/indibase/indifilterwheel.cpp
+       libs/indibase/indifilterwheel.h
+       libs/indibase/indifocuser.cpp
+       libs/indibase/indifocuser.h
+       libs/indibase/indilogger.cpp
+       libs/indibase/indilogger.h
+       libs/indibase/indiproperty.cpp
+       libs/indibase/indiproperty.h
+       libs/indibase/inditelescope.cpp
+       libs/indibase/inditelescope.h
+       libs/indibase/indiusbdevice.cpp
+       libs/indibase/indiusbdevice.h
+Copyright: 2013, CloudMakers, s. r. o
+           2006-2010, Craig Stark
+           2012, Evidence Srl - www.evidence.eu.com
+           2010-2011, Gerry Rozema
+           2010-2011, Gerry Rozema, Jasem Mutlaq
+           2011-2014, Jasem Mutlaq
+           2013, Jasem Mutlaq <mutlaqja@ikarustech.com>
+           Anders Arpteg <aa11ac@hik.se>
+           Charles Henrich <henrich@msu.edu>
+           2001-2004, Nemosoft Unv. <athomas@nemsoft.co.uk>
+           2004-2006, Luc Saillard <luc@saillard.org>
+License: LGPL-2
+
+Files: drivers/auxiliary/STAR2000.cpp
+       drivers/auxiliary/STAR2000.h
+       drivers/auxiliary/STAR2kdriver.c
+       drivers/auxiliary/STAR2kdriver.h
+       drivers/auxiliary/gpdriver.cpp
+       drivers/auxiliary/gpdriver.h
+       drivers/auxiliary/gpusb.cpp
+       drivers/auxiliary/gpusb.h
+       drivers/auxiliary/joystick.cpp
+       drivers/auxiliary/joystick.h
+       drivers/auxiliary/joystickdriver.cpp
+       drivers/auxiliary/joystickdriver.h
+       libs/stream/ccvt_c2.c
+       libs/stream/ccvt_misc.c
+       libs/stream/ccvt_types.h
+       libs/stream/jpegutils.c
+       libs/stream/pwc-ioctl.h
+       libs/stream/vcvt.h
+Copyright: 2008, Angel Carpintero <ack@telefonica.net>
+           2006, Bill Dirks <bdirks@pacbell.net>
+           1989-1991, Free Software Foundation, Inc
+           2010, Gerry Rozema
+           2012-2013, Jasem Mutlaq
+           2000, Jeroen Vreeken <pe1rxq@amsat.org>
+           2004-2006, Luc Saillard <luc@saillard.org>
+           2001-2004, Nemosoft Unv
+           2001, Nemosoft Unv <nemosoft@smcc.demon.nl>
+           1999, Rainer Johanni <Rainer@Johanni.de>
+           2001, Tony Hague <no.email@noemail.com>
+           2001, pHilipp Zabel <pzabel@gmx.de>
+License: GPL-2+
+
+Files: cmake_modules/*
+Copyright: 2006, 2017-2019, Jasem Mutlaq <mutlaqja@ikarustech.com>
+           2007-2009, Kitware, Inc.
+           2009-2012, Christoph Heindl
+           2009, Daniel Blezek <blezek@gmail.com>
+           2009, Philip Lowman <philip@yhbt.com>
+           2010, Alexander Neundorf <neundorf@kde.org>
+           2010, Michael Bell <michael.bell@web.de>
+           2011-2013, julp
+           2014, Kelly Thompson <kgt@lanl.gov>
+           2015, Csaba Kertész <csaba.kertesz@gmail.com>
+           2015-2016, MariaDB Corporation AB
+           2017, Ilia Platone <info@iliaplatone.com>
+           2017, Pino Toscano <toscano.pino@tiscali.it>
+License: BSD-3-clause
+
+Files: drivers/video/stvdriver.h
+Copyright: 2006, Lukas Zimmermann, Basel, Switzerland
+           2006, Markus Wildi <markus.wildi@datacomm.ch>
+License: GPL-2+ or LGPL-2.1+
+
+Files: libs/stream/ccvt.h
+Copyright: 2002, Nemosoft Unv
+           2004, Takafumi Mizuno <taka-qce@ls-a.jp>
+License: BSD-2-clause or GPL-2+
+
+Files: debian/*
+Copyright: 2011-2012, Pino Toscano <pino@debian.org>
+License: GPL-2+
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: LGPL-2
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License version 2 as published by the Free Software Foundation.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ .
+ You should have received a copy of the GNU Library General Public License
+ along with this library; see the file COPYING.LIB.  If not, write to
+ the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU Library General Public License
+ version 2 can be found in `/usr/share/common-licenses/LGPL-2'.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License version 2.1 as published by the Free Software Foundation.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ .
+ You should have received a copy of the GNU Library General Public License
+ along with this library; see the file COPYING.LIB.  If not, write to
+ the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU Library General Public License
+ version 2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -16,7 +247,8 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <https://www.gnu.org/licenses/>
+ along with this program. If not, see <http://www.gnu.org/licenses/>
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the complete texts of the GNU General Public Licenses
+ version 2 and 3 can be found in `/usr/share/common-licenses/GPL-2' and
+ `/usr/share/common-licenses/GPL-3'.

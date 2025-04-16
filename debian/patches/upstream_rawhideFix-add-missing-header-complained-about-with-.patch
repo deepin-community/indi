@@ -1,0 +1,64 @@
+From 4170c0ae30ac1df2e732392e38cb6aaae1802379 Mon Sep 17 00:00:00 2001
+From: Jim <jh.xsnrg@gmail.com>
+Date: Mon, 23 Jan 2023 22:47:18 -0600
+Subject: [PATCH] rawhideFix: add missing header complained about with
+ Fedora38/rawhide (#1817)
+
+---
+ drivers/telescope/ieqdriverbase.h                  | 1 +
+ drivers/telescope/ieqprolegacydriver.h             | 1 +
+ libs/indibase/connectionplugins/connectionserial.h | 1 +
+ libs/indibase/dsp/dspinterface.h                   | 1 +
+ 4 files changed, 4 insertions(+)
+
+diff --git a/drivers/telescope/ieqdriverbase.h b/drivers/telescope/ieqdriverbase.h
+index 030e48f5b..e2a35e209 100644
+--- a/drivers/telescope/ieqdriverbase.h
++++ b/drivers/telescope/ieqdriverbase.h
+@@ -22,6 +22,7 @@
+ 
+ #include <string>
+ #include <vector>
++#include <cstdint>
+ 
+ namespace iEQ
+ {
+diff --git a/drivers/telescope/ieqprolegacydriver.h b/drivers/telescope/ieqprolegacydriver.h
+index 960e0fdb1..926b8ebc9 100644
+--- a/drivers/telescope/ieqprolegacydriver.h
++++ b/drivers/telescope/ieqprolegacydriver.h
+@@ -21,6 +21,7 @@
+ #pragma once
+ 
+ #include <string>
++#include <cstdint>
+ 
+ typedef enum { GPS_OFF, GPS_ON, GPS_DATA_OK } IEQ_GPS_STATUS;
+ typedef enum
+diff --git a/libs/indibase/connectionplugins/connectionserial.h b/libs/indibase/connectionplugins/connectionserial.h
+index da92c2d4d..112f5b004 100644
+--- a/libs/indibase/connectionplugins/connectionserial.h
++++ b/libs/indibase/connectionplugins/connectionserial.h
+@@ -24,6 +24,7 @@
+ 
+ #include <string>
+ #include <vector>
++#include <cstdint>
+ 
+ namespace Connection
+ {
+diff --git a/libs/indibase/dsp/dspinterface.h b/libs/indibase/dsp/dspinterface.h
+index 5e0c58020..4524e0843 100644
+--- a/libs/indibase/dsp/dspinterface.h
++++ b/libs/indibase/dsp/dspinterface.h
+@@ -26,6 +26,7 @@
+ #include <fitsio.h>
+ #include <functional>
+ #include <string>
++#include <cstdint>
+ 
+ namespace INDI
+ {
+-- 
+2.40.1
+

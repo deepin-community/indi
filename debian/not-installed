@@ -1,0 +1,4 @@
+lib/udev/rules.d/99-flipflat.rules
+lib/udev/rules.d/99-gpusb.rules
+lib/udev/rules.d/99-perfectstar.rules
+lib/udev/rules.d/99-vantage.rules

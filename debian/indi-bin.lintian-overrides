@@ -1,0 +1,2 @@
+# indi driver
+indi-bin: no-manual-page [usr/bin/indi_*]

@@ -1,3 +1,9 @@
+indi (1.9.9+dfsg-3.1+rb1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Cryolitia <cryolitia@deepin.org>  Tue, 24 Jun 2025 14:50:30 +0800
+
 indi (1.9.9+dfsg-3) unstable; urgency=medium
 
   * Backport upstream commit 4170c0ae30ac1df2e732392e38cb6aaae1802379 to fix
